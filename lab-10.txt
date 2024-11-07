@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+using namespace std;
+
+struct Student {
+    int rollNumber;
+    string name;
+    string division;
+    string address;
+};
+
+// Function to add a student record
+void addStudent(const string& filename) {
+    Student student;
+    cout << "Enter Roll Number: ";
+    cin >> student.rollNumber;
+    cin.ignore(); // Ignore newline character after integer input
+    cout << "Enter Name: ";
+    getline(cin, student.name);
+    cout << "Enter Division: ";
+    getline(cin, student.division);
+    cout << "Enter Address: ";
+    getline(cin, student.address);
+
+    ofstream outFile(filename, ios::app); // Open file in append mode
+    if (outFile.is_open()) {
+        outFile << student.rollNumber << endl;
+        outFile << student.name << endl;
+        outFile << student.division << endl;
+        out ⬤
